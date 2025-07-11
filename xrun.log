@@ -1,0 +1,2039 @@
+xrun: 23.09-s001: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun	23.09-s001: Started on Jul 11, 2025 at 11:58:45 EDT
+xrun
+	-Q
+	-unbuffered
+	-timescale 1ns/1ns
+	-sysv
+	-access +rw
+	+UVM_TESTNAME=ctrl_test
+	-uvmnocdnsextra
+	-uvmhome /xcelium23.09/tools//methodology/UVM/CDNS-1.2/sv
+	/xcelium23.09/tools//methodology/UVM/CDNS-1.2/sv/src/uvm_macros.svh
+	design.sv
+	testbench.sv
+  req.randomize() with{addr == m_addr; wr == 1'b1; rd == 1'b0;};
+              |
+xmvlog: *W,FUNTSK (register_base_sequence.sv,23|14): function called as a task without void'().
+  req.randomize() with{addr == m_addr; wr_data == m_data; wr == 1'b1 ; rd == 1'b0; };
+              |
+xmvlog: *W,FUNTSK (register_base_sequence.sv,33|14): function called as a task without void'().
+    req.randomize() with{addr == m_addr; rd == 1'b1; wr == 1'b0;};
+                |
+xmvlog: *W,FUNTSK (register_base_sequence.sv,43|16): function called as a task without void'().
+    req.randomize() with{addr == m_addr; rd == 1'b1; wr == 1'b0;};
+                |
+xmvlog: *W,FUNTSK (register_base_sequence.sv,53|16): function called as a task without void'().
+	Top level design units:
+		uvm_pkg
+		$unit_0x4ccdf83b
+		tb_top_packet_divider
+Loading snapshot worklib.tb_top_packet_divider:sv .................... Done
+SVSEED default: 1
+xcelium> source /xcelium23.09/tools/xcelium/files/xmsimrc
+xcelium> source /xcelium23.09/tools//methodology/UVM/CDNS-1.2/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+UVM_INFO /xcelium23.09/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(412) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+CDNS-UVM-1.2 (23.09-s001)
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO testbench.sv(56) @ 0: reporter [clk_gen_freq] value of freq=12 
+UVM_INFO testbench.sv(51) @ 0: reporter [clock_gen]  freq_mhz=1.2e+07 time_p=83.3333  h_time_p=41.6667 
+UVM_INFO @ 0: reporter [RNTST] Running test ctrl_test...
+xmsim: *W,PRPASZ: Packed array at "worklib.uvm_pkg::uvm_string_to_bits.uvm_string_to_bits" of 115200 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 115200 worklib.uvm_pkg::uvm_string_to_bits.uvm_string_to_bits' or 'setenv SHM_PACKED_LIMIT 115200' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "worklib.uvm_pkg::uvm_bits_to_string.str" of 115200 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 115200 worklib.uvm_pkg::uvm_bits_to_string.str' or 'setenv SHM_PACKED_LIMIT 115200' to adjust limit.
+UVM_INFO register_agent.sv(35) @ 0: uvm_test_top.reg_env.reg_agent [reg_agent]  REGISTER AGENT IS CONFIGURED AS A " ACTIVE AGENT " 
+-------------------------------------------------------------------
+Name                         Type                       Size  Value
+-------------------------------------------------------------------
+uvm_test_top                 ctrl_test                  -     @1877
+  reg_env                    register_environment       -     @1945
+    reg_agent                register_agent             -     @2042
+      item_collected_port    uvm_analysis_port          -     @3046
+      reg_driv               register_driver            -     @2815
+        rsp_port             uvm_analysis_port          -     @2915
+        seq_item_port        uvm_seq_item_pull_port     -     @2865
+      reg_mntr               register_monitor           -     @1917
+        item_collected_port  uvm_analysis_port          -     @2997
+      reg_seqr               register_sequencer         -     @2162
+        rsp_export           uvm_analysis_export        -     @2222
+        seq_item_export      uvm_seq_item_pull_imp      -     @2782
+        arbitration_queue    array                      0     -    
+        lock_queue           array                      0     -    
+        num_last_reqs        integral                   32    'd1  
+        num_last_rsps        integral                   32    'd1  
+    scb                      scoreboard                 -     @2073
+      reg_mntr2scb           uvm_analysis_imp_reg_mntr  -     @2125
+-------------------------------------------------------------------
+UVM_INFO /xcelium23.09/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_factory.svh(1645) @ 0: reporter [UVM/FACTORY/PRINT] 
+#### Factory Configuration (*)
+
+  No instance or type overrides are registered with this factory
+
+All types registered with the factory: 63 total
+  Type Name
+  ---------
+  base_test
+  ctrl_test
+  register_agent
+  register_base_sequence
+  register_config_agent
+  register_driver
+  register_environment
+  register_monitor
+  register_seq_item
+  register_sequence
+  register_sequencer
+  scoreboard
+(*) Types with no associated type name will be printed as <unknown>
+
+####
+
+
+UVM_INFO /xcelium23.09/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(605) @ 0: reporter [UVMTOP] UVM testbench topology:
+-------------------------------------------------------------------
+Name                         Type                       Size  Value
+-------------------------------------------------------------------
+uvm_test_top                 ctrl_test                  -     @1877
+  reg_env                    register_environment       -     @1945
+    reg_agent                register_agent             -     @2042
+      item_collected_port    uvm_analysis_port          -     @3046
+      reg_driv               register_driver            -     @2815
+        rsp_port             uvm_analysis_port          -     @2915
+        seq_item_port        uvm_seq_item_pull_port     -     @2865
+      reg_mntr               register_monitor           -     @1917
+        item_collected_port  uvm_analysis_port          -     @2997
+      reg_seqr               register_sequencer         -     @2162
+        rsp_export           uvm_analysis_export        -     @2222
+        seq_item_export      uvm_seq_item_pull_imp      -     @2782
+        arbitration_queue    array                      0     -    
+        lock_queue           array                      0     -    
+        num_last_reqs        integral                   32    'd1  
+        num_last_rsps        integral                   32    'd1  
+    scb                      scoreboard                 -     @2073
+      reg_mntr2scb           uvm_analysis_imp_reg_mntr  -     @2125
+-------------------------------------------------------------------
+
+UVM_INFO register_driver.sv(73) @ 60: uvm_test_top.reg_env.reg_agent.reg_driv [reg_driv]  RESET OF DUT IS STARTED  "active low reset rst_n =0 " 
+UVM_INFO register_driver.sv(80) @ 350: uvm_test_top.reg_env.reg_agent.reg_driv [reg_driv]  RESET OF DUT IS COMPLETED "active low reset rst_n =1 " 
+UVM_INFO register_driver.sv(29) @ 462: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3139                                               
+  addr                         integral           3     'h5                                                 
+  wr                           integral           1     'h0                                                 
+  wr_data                      integral           8     'h7b                                                
+  rd                           integral           1     'h1                                                 
+  rd_data                      integral           8     'hff                                                
+  tx_length                    integral           8     'h30                                                
+  payload_size                 integral           8     'h4b                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    350                                                 
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_base_sequence.sv(106) @ 462: uvm_test_top.reg_env.reg_agent.reg_seqr@@uvm_sequence [uvm_sequence] STATUS_REGISTER TX_BUSY =1
+UVM_INFO register_monitor.sv(66) @ 546: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR READ MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @1942
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'h7b 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'hff 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 546: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @1942
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'h7b 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'hff 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 630: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3283                                               
+  addr                         integral           3     'h5                                                 
+  wr                           integral           1     'h0                                                 
+  wr_data                      integral           8     'hb1                                                
+  rd                           integral           1     'h1                                                 
+  rd_data                      integral           8     'hff                                                
+  tx_length                    integral           8     'hba                                                
+  payload_size                 integral           8     'h45                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    462                                                 
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_base_sequence.sv(106) @ 630: uvm_test_top.reg_env.reg_agent.reg_seqr@@uvm_sequence [uvm_sequence] STATUS_REGISTER TX_BUSY =1
+UVM_INFO register_monitor.sv(66) @ 714: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR READ MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3278
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'hb1 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h78 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 714: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3278
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'hb1 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h78 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 798: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3281                                               
+  addr                         integral           3     'h5                                                 
+  wr                           integral           1     'h0                                                 
+  wr_data                      integral           8     'hd4                                                
+  rd                           integral           1     'h1                                                 
+  rd_data                      integral           8     'h78                                                
+  tx_length                    integral           8     'h50                                                
+  payload_size                 integral           8     'h38                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    630                                                 
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_base_sequence.sv(106) @ 798: uvm_test_top.reg_env.reg_agent.reg_seqr@@uvm_sequence [uvm_sequence] STATUS_REGISTER TX_BUSY =0
+UVM_INFO register_base_sequence.sv(109) @ 798: uvm_test_top.reg_env.reg_agent.reg_seqr@@uvm_sequence [uvm_sequence] 
+ STATUS_REGISTER TX_BUSY =0 -------------SO PROCCED TO START REGISTERS CONFIGRATION-----------------
+UVM_INFO register_base_sequence.sv(113) @ 798: uvm_test_top.reg_env.reg_agent.reg_seqr@@uvm_sequence [uvm_sequence] 
+--------------REGISTER CONFIGARATION IS STARTED---------------
+UVM_INFO register_monitor.sv(66) @ 882: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR READ MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3237
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'hd4 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h78 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 882: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3237
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'hd4 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h78 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 882: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3231                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h2d                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h70                                                
+  payload_size                 integral           8     'h25                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    798                                                 
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 966: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3305                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'hbc                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h1b                                                
+  payload_size                 integral           8     'hc                                                 
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    882                                                 
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 1008: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3293
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h2d 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 1008: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3293
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h2d 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 1050: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3263                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h39                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'hd2                                                
+  payload_size                 integral           8     'h1c                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    966                                                 
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 1092: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3253
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hbc 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 1092: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3253
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hbc 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 1134: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3306                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h49                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h9c                                                
+  payload_size                 integral           8     'h1b                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    1050                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 1176: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3249
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h39 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 1176: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3249
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h39 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 1218: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3275                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'hd2                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'hde                                                
+  payload_size                 integral           8     'h1c                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    1134                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 1260: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3251
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h49 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 1260: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3251
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h49 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 1302: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3233                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h6                                                 
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h3e                                                
+  payload_size                 integral           8     'h3d                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    1218                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 1344: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3240
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hd2 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 1344: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3240
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hd2 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 1386: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3274                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h11                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h9f                                                
+  payload_size                 integral           8     'h5                                                 
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    1302                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 1428: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3284
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h6  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 1428: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3284
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h6  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 1470: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3297                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h68                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h96                                                
+  payload_size                 integral           8     'h19                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    1386                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 1512: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3260
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h11 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 1512: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3260
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h11 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 1554: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3219                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'hf5                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h16                                                
+  payload_size                 integral           8     'h27                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    1470                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 1596: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3206
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h68 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 1596: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3206
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h68 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 1638: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3244                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'hb7                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h21                                                
+  payload_size                 integral           8     'h2f                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    1554                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 1680: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3287
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hf5 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 1680: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3287
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hf5 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 1722: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3279                                               
+  addr                         integral           3     'h2                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'ha                                                 
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h50                                                
+  payload_size                 integral           8     'h5e                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    1638                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 1764: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3280
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hb7 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 1764: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3280
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hb7 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 1806: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3307                                               
+  addr                         integral           3     'h1                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h2                                                 
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'hd8                                                
+  payload_size                 integral           8     'h7                                                 
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    1722                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 1848: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3277
+  addr           integral           3     'h2  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'ha  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 1848: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3277
+  addr           integral           3     'h2  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'ha  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 1890: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3249                                               
+  addr                         integral           3     'h0                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h1                                                 
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'hf3                                                
+  payload_size                 integral           8     'h3e                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    1806                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_base_sequence.sv(125) @ 1890: uvm_test_top.reg_env.reg_agent.reg_seqr@@uvm_sequence [uvm_sequence] 
+ <<<<<<<<<<<<<<<<<<REGISTER CONFIGARATION IS COMPLETED>>>>>>>>>>>>>>>>>
+UVM_INFO register_monitor.sv(53) @ 1932: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3240
+  addr           integral           3     'h1  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h2  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 1932: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3240
+  addr           integral           3     'h1  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h2  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 2016: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3210
+  addr           integral           3     'h0  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h1  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 2016: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3210
+  addr           integral           3     'h0  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h1  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 2058: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3284                                               
+  addr                         integral           3     'h5                                                 
+  wr                           integral           1     'h0                                                 
+  wr_data                      integral           8     'hfd                                                
+  rd                           integral           1     'h1                                                 
+  rd_data                      integral           8     'h5f                                                
+  tx_length                    integral           8     'ha7                                                
+  payload_size                 integral           8     'h2                                                 
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    1890                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_base_sequence.sv(106) @ 2058: uvm_test_top.reg_env.reg_agent.reg_seqr@@uvm_sequence [uvm_sequence] STATUS_REGISTER TX_BUSY =1
+UVM_INFO register_monitor.sv(66) @ 2142: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR READ MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3237
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'hfd 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h5f 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 2142: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3237
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'hfd 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h5f 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 2226: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3272                                               
+  addr                         integral           3     'h5                                                 
+  wr                           integral           1     'h0                                                 
+  wr_data                      integral           8     'h3c                                                
+  rd                           integral           1     'h1                                                 
+  rd_data                      integral           8     'h5f                                                
+  tx_length                    integral           8     'h69                                                
+  payload_size                 integral           8     'h54                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    2058                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_base_sequence.sv(106) @ 2226: uvm_test_top.reg_env.reg_agent.reg_seqr@@uvm_sequence [uvm_sequence] STATUS_REGISTER TX_BUSY =1
+UVM_INFO register_monitor.sv(66) @ 2310: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR READ MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3206
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'h3c 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h34 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 2310: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3206
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'h3c 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h34 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 2394: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3277                                               
+  addr                         integral           3     'h5                                                 
+  wr                           integral           1     'h0                                                 
+  wr_data                      integral           8     'hb0                                                
+  rd                           integral           1     'h1                                                 
+  rd_data                      integral           8     'h34                                                
+  tx_length                    integral           8     'hb4                                                
+  payload_size                 integral           8     'h36                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    2226                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_base_sequence.sv(106) @ 2394: uvm_test_top.reg_env.reg_agent.reg_seqr@@uvm_sequence [uvm_sequence] STATUS_REGISTER TX_BUSY =0
+UVM_INFO register_base_sequence.sv(109) @ 2394: uvm_test_top.reg_env.reg_agent.reg_seqr@@uvm_sequence [uvm_sequence] 
+ STATUS_REGISTER TX_BUSY =0 -------------SO PROCCED TO START REGISTERS CONFIGRATION-----------------
+UVM_INFO register_base_sequence.sv(113) @ 2394: uvm_test_top.reg_env.reg_agent.reg_seqr@@uvm_sequence [uvm_sequence] 
+--------------REGISTER CONFIGARATION IS STARTED---------------
+UVM_INFO register_monitor.sv(66) @ 2478: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR READ MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3217
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'hb0 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h34 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 2478: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3217
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'hb0 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h34 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 2478: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3231                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'hfb                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h1                                                 
+  payload_size                 integral           8     'h3f                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    2394                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 2562: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3278                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h93                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'he3                                                
+  payload_size                 integral           8     'h15                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    2478                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 2604: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3256
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hfb 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 2604: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3256
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hfb 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 2646: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3293                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h60                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h4f                                                
+  payload_size                 integral           8     'h18                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    2562                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 2688: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3303
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h93 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 2688: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3303
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h93 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 2730: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3241                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h1c                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'hc7                                                
+  payload_size                 integral           8     'h2e                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    2646                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 2772: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3275
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h60 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 2772: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3275
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h60 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 2814: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3302                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'hc                                                 
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'hc9                                                
+  payload_size                 integral           8     'h49                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    2730                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 2856: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3244
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h1c 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 2856: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3244
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h1c 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 2898: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3262                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h33                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h56                                                
+  payload_size                 integral           8     'h2f                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    2814                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 2940: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3249
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hc  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 2940: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3249
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hc  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 2982: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3289                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'ha5                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h78                                                
+  payload_size                 integral           8     'h38                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    2898                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 3024: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3267
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h33 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 3024: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3267
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h33 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 3066: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3297                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'hef                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h9a                                                
+  payload_size                 integral           8     'h3d                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    2982                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 3108: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3121
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'ha5 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 3108: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3121
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'ha5 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 3150: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3307                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h6e                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h47                                                
+  payload_size                 integral           8     'h13                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    3066                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 3192: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3273
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hef 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 3192: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3273
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hef 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 3234: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3243                                               
+  addr                         integral           3     'h6                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'hdc                                                
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h0                                                 
+  payload_size                 integral           8     'h37                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    3150                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 3276: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3299
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h6e 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 3276: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3299
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h6e 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 3318: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3286                                               
+  addr                         integral           3     'h2                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'ha                                                 
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'hdd                                                
+  payload_size                 integral           8     'h28                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    3234                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 3360: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3139
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hdc 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 3360: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3139
+  addr           integral           3     'h6  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'hdc 
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 3402: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3310                                               
+  addr                         integral           3     'h1                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h2                                                 
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'hb5                                                
+  payload_size                 integral           8     'h3f                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    3318                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 3444: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3290
+  addr           integral           3     'h2  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'ha  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 3444: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3290
+  addr           integral           3     'h2  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'ha  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 3486: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3306                                               
+  addr                         integral           3     'h0                                                 
+  wr                           integral           1     'h1                                                 
+  wr_data                      integral           8     'h1                                                 
+  rd                           integral           1     'h0                                                 
+  rd_data                      integral           8     'h0                                                 
+  tx_length                    integral           8     'h7b                                                
+  payload_size                 integral           8     'h50                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    3402                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_base_sequence.sv(125) @ 3486: uvm_test_top.reg_env.reg_agent.reg_seqr@@uvm_sequence [uvm_sequence] 
+ <<<<<<<<<<<<<<<<<<REGISTER CONFIGARATION IS COMPLETED>>>>>>>>>>>>>>>>>
+UVM_INFO register_monitor.sv(53) @ 3528: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3296
+  addr           integral           3     'h1  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h2  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 3528: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3296
+  addr           integral           3     'h1  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h2  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_monitor.sv(53) @ 3612: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR WRITE MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3282
+  addr           integral           3     'h0  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h1  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 3612: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3282
+  addr           integral           3     'h0  
+  wr             integral           1     'h1  
+  wr_data        integral           8     'h1  
+  rd             integral           1     'h0  
+  rd_data        integral           8     'h0  
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 3654: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3310                                               
+  addr                         integral           3     'h5                                                 
+  wr                           integral           1     'h0                                                 
+  wr_data                      integral           8     'hd5                                                
+  rd                           integral           1     'h1                                                 
+  rd_data                      integral           8     'h5f                                                
+  tx_length                    integral           8     'h60                                                
+  payload_size                 integral           8     'h2e                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    3486                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(66) @ 3738: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR READ MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3233
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'hd5 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h5f 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 3738: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3233
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'hd5 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h5f 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 3822: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3311                                               
+  addr                         integral           3     'h5                                                 
+  wr                           integral           1     'h0                                                 
+  wr_data                      integral           8     'h7                                                 
+  rd                           integral           1     'h1                                                 
+  rd_data                      integral           8     'h5f                                                
+  tx_length                    integral           8     'h4e                                                
+  payload_size                 integral           8     'h33                                                
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    3654                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(66) @ 3906: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR READ MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3236
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'h7  
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h5f 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 3906: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3236
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'h7  
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h5f 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO register_driver.sv(29) @ 3990: uvm_test_top.reg_env.reg_agent.reg_driv [REG_DRV_RUN] 
+------------------------------------------------------------------------------------------------------------
+Name                           Type               Size  Value                                               
+------------------------------------------------------------------------------------------------------------
+req                            register_seq_item  -     @3293                                               
+  addr                         integral           3     'h5                                                 
+  wr                           integral           1     'h0                                                 
+  wr_data                      integral           8     'h84                                                
+  rd                           integral           1     'h1                                                 
+  rd_data                      integral           8     'h34                                                
+  tx_length                    integral           8     'hd0                                                
+  payload_size                 integral           8     'h4                                                 
+  data                         da(integral)       0     -                                                   
+  cmd                          integral           1     'h1                                                 
+  begin_time                   time               64    3822                                                
+  depth                        int                32    'd2                                                 
+  parent sequence (name)       string             12    uvm_sequence                                        
+  parent sequence (full name)  string             52    uvm_test_top.reg_env.reg_agent.reg_seqr.uvm_sequence
+  sequencer                    string             39    uvm_test_top.reg_env.reg_agent.reg_seqr             
+------------------------------------------------------------------------------------------------------------
+
+UVM_INFO register_monitor.sv(66) @ 4074: uvm_test_top.reg_env.reg_agent.reg_mntr [uvm_test_top.reg_env.reg_agent.reg_mntr] REGISTER_MONITOR READ MODE COLLECTION 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3270
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'h84 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h34 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO scoreboard.sv(23) @ 4074: uvm_test_top.reg_env.scb [uvm_test_top.reg_env.scb]  SCOREBORAD GOT PKT FROM THE REGISTER_AGENT 
+-----------------------------------------------
+Name             Type               Size  Value
+-----------------------------------------------
+trans_collected  register_seq_item  -     @3270
+  addr           integral           3     'h5  
+  wr             integral           1     'h0  
+  wr_data        integral           8     'h84 
+  rd             integral           1     'h1  
+  rd_data        integral           8     'h34 
+  tx_length      integral           8     'h0  
+  payload_size   integral           8     'h0  
+  data           da(integral)       0     -    
+  cmd            integral           1     'h0  
+-----------------------------------------------
+
+UVM_INFO /xcelium23.09/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_objection.svh(1271) @ 4270: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /xcelium23.09/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(847) @ 4270: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  127
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[REG_DRV_RUN]    35
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/FACTORY/PRINT]     1
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+[clk_gen_freq]     1
+[clock_gen]     1
+[reg_agent]     1
+[reg_driv]     2
+[uvm_sequence]    12
+[uvm_test_top.reg_env.reg_agent.reg_mntr]    35
+[uvm_test_top.reg_env.scb]    35
+
+Simulation complete via $finish(1) at time 4270 NS + 58
+/xcelium23.09/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:543     $finish;
+xcelium> exit
+TOOL:	xrun	23.09-s001: Exiting on Jul 11, 2025 at 11:58:52 EDT  (total: 00:00:07)
